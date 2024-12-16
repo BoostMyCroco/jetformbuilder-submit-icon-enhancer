@@ -113,6 +113,22 @@ To use the **Paper Plane** icon for a Submit button:
 1. Add the class `icon-fa-paper-plane` in the "Additional CSS Class" field.
 2. The resulting button will display the icon 📨 aligned to the left of the button label.
 
+**Important Note:**  
+Make sure the Font Awesome library is loaded on your site. If your theme or another plugin doesn't already enqueue it, you can add it by placing the following code in your `functions.php` or Code Snippets plugin:
+
+   ```php
+   function ensure_font_awesome_loaded() {
+       if ( ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
+           wp_enqueue_style(
+               'font-awesome',
+               'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+               array(),
+               '5.15.4'
+           );
+       }
+   }
+   add_action( 'wp_enqueue_scripts', 'ensure_font_awesome_loaded' );
+
 
 ## Compatibility
 WordPress: Version 5.8 or higher.
