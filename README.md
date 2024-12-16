@@ -47,6 +47,7 @@ Install and activate the free plugin Code Snippets from the WordPress plugin rep
 2. Give your snippet a name like "JetFormBuilder Submit Icon Enhancer."
 3. Paste the following code into the snippet editor:
 
+```php
 add_filter('the_content', 'my_custom_icon_in_jetform_button', 20);
 function my_custom_icon_in_jetform_button($content) {
     if (preg_match_all('/<button[^>]*class="[^"]*icon-fa-([a-z0-9-]+)/i', $content, $matches)) {
@@ -80,3 +81,46 @@ For a button with the text "Submit" and a paper plane icon:
 <button class="jet-form-builder__action-button icon-fa-paper-plane">
   <i class="fa fa-paper-plane" style="margin-right:5px; vertical-align:middle;"></i> Submit
 </button>
+
+## Popular Icons for Submit Buttons
+
+Here is a list of 18 popular icons for submit buttons that you can use with this plugin. Simply add the corresponding class `icon-fa-{icon-name}` in the "Additional CSS Class" field of the Submit block.
+
+| Icon Preview | Icon Name         | Font Awesome Class  |
+|--------------|-------------------|---------------------|
+| 📨           | Paper Plane       | `fa-paper-plane`    |
+| 📩           | Envelope          | `fa-envelope`       |
+| ✔️           | Check             | `fa-check`          |
+| ❌           | Times             | `fa-times`          |
+| ➕           | Plus              | `fa-plus`           |
+| ➖           | Minus             | `fa-minus`          |
+| ⭐           | Star              | `fa-star`           |
+| ❤️           | Heart             | `fa-heart`          |
+| 🔔           | Bell              | `fa-bell`           |
+| 🔗           | Link              | `fa-link`           |
+| 📤           | Upload            | `fa-upload`         |
+| 🛒           | Cart              | `fa-shopping-cart`  |
+| 🔒           | Lock              | `fa-lock`           |
+| 🔓           | Unlock            | `fa-unlock`         |
+| 📁           | Folder            | `fa-folder`         |
+| 📂           | Open Folder       | `fa-folder-open`    |
+| ➡️           | Arrow Right       | `fa-arrow-right`    |
+| ⬅️           | Arrow Left        | `fa-arrow-left`     |
+
+### Example
+
+To use the **Paper Plane** icon for a Submit button:
+1. Add the class `icon-fa-paper-plane` in the "Additional CSS Class" field.
+2. The resulting button will display the icon 📨 aligned to the left of the button label.
+
+
+## Compatibility
+WordPress: Version 5.8 or higher.
+JetFormBuilder: Version 2.0 or higher.
+PHP: Version 7.4 or higher.
+License
+This snippet is open-source and licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+JetFormBuilder – For providing a robust form-building solution.
+Font Awesome – For the icons.
