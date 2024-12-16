@@ -46,20 +46,20 @@ Install and activate the free plugin Code Snippets from the WordPress plugin rep
 1. In the WordPress admin panel, navigate to Snippets > Add New.
 2. Give your snippet a name like "JetFormBuilder Submit Icon Enhancer."
 3. Paste the following code into the snippet editor:
-
-```php
-add_filter('the_content', 'my_custom_icon_in_jetform_button', 20);
-function my_custom_icon_in_jetform_button($content) {
-    if (preg_match_all('/<button[^>]*class="[^"]*icon-fa-([a-z0-9-]+)/i', $content, $matches)) {
-        foreach ($matches[1] as $icon_name) {
-            $icon_class = 'fa-' . $icon_name;
-            $regex = '/(<button\b[^>]*icon-fa-' . preg_quote($icon_name, '/') . '[^>]*>)(.*?)(<\/button>)/is';
-            $replacement = '$1<i class="fa ' . $icon_class . '" style="margin-right:5px; vertical-align:middle;"></i>$2$3';
-            $content = preg_replace($regex, $replacement, $content);
-        }
-    }
-    return $content;
-}
+   
+   ```php
+   add_filter('the_content', 'my_custom_icon_in_jetform_button', 20);
+   function my_custom_icon_in_jetform_button($content) {
+       if (preg_match_all('/<button[^>]*class="[^"]*icon-fa-([a-z0-9-]+)/i', $content, $matches)) {
+           foreach ($matches[1] as $icon_name) {
+               $icon_class = 'fa-' . $icon_name;
+               $regex = '/(<button\b[^>]*icon-fa-' . preg_quote($icon_name, '/') . '[^>]*>)(.*?)(<\/button>)/is';
+               $replacement = '$1<i class="fa ' . $icon_class . '" style="margin-right:5px; vertical-align:middle;"></i>$2$3';
+               $content = preg_replace($regex, $replacement, $content);
+           }
+       }
+       return $content;
+   }
 
 4. Set the snippet to "Run Everywhere" and save it.
 5. The functionality will now be active on your website.
