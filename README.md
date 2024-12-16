@@ -77,10 +77,10 @@ For a button with the text "Submit" and a paper plane icon:
 1. Add the class `icon-fa-paper-plane` in the block settings.
 2. The resulting button will display the paper plane icon aligned to the left of the "Submit" text.
 
-```html
-<button class="jet-form-builder__action-button icon-fa-paper-plane">
-  <i class="fa fa-paper-plane" style="margin-right:5px; vertical-align:middle;"></i> Submit
-</button>
+   ```html
+   <button class="jet-form-builder__action-button icon-fa-paper-plane">
+     <i class="fa fa-paper-plane" style="margin-right:5px; vertical-align:middle;"></i> Submit
+   </button>
 
 ## Popular Icons for Submit Buttons
 
